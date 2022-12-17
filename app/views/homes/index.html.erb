@@ -1,0 +1,22 @@
+<h1> HOME PAGE </h1>
+
+<h3> Welcome to the comp </h3>
+
+<%#= link_to "My PostCommant", controller: "posts" %>
+
+<h2> Users List</h2>
+ <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-light" %>
+<div class="container">
+	<table>
+	  <tr>
+	    <th>Email</th>
+	    <th>First_Name</th>
+	  </tr> 
+	  <% @users.each do |user| %>
+		  <tr>
+		      <td><%= user.email %> </td>
+		      <td><%= user.first_name%></td>
+		  </tr>
+ <% end %>  
+	</table>
+</div>
